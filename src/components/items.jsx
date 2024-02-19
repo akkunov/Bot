@@ -20,12 +20,7 @@ export default function Items() {
   return (
   
     <div className={css.container }>
-        {items.map((item,index) =>(
-            <div key={index}>
-                <Item {...item} />
-            </div>
-        )
-         )}
+        {items.map((item,index) =><Item {...item}  key={index}/>    )}
     </div>
   )
 }

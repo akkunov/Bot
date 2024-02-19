@@ -1,33 +1,30 @@
-.container{
+.box {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    width: 20vw;
+  }
+  
+
+
+.box .imageBox{
     display: flex;
     flex-direction: column;
-    column-gap:20px ;
-    padding: 20px;
-    width: 30vw;
-}
-img{
+    justify-content: center;
+    align-items: center;
     width: 20vw;
-    height: 20vh;
+    height: 15vh;
 }
-.container div{
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 600;
+  .box img {
+    width: 15vw;
+    height: 15vh;
+    object-fit: contain;
+}
+
+.desc{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-.container button{
-    outline: none;
-    width: fit-content;
-    border: 0px;
-    padding: 10px  30px;
-    border-radius: 5px;
-}
-.container button:hover{
-   background-color: coral;
-   outline: none;
-   border: 0px ;
-}
+    row-gap: 30px;
+  }

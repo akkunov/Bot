@@ -4,17 +4,15 @@ import css from './item.module.css'
 export default function Item({name, image, price}) {
 
   return (
-    <>
-    <div className={css.container}>
-        <img src={image}/>
-        <div className={css.titleContainer}>
-            <span>{name}</span>
-            <span>{price}</span>
+    <div className={css.box}>
+        <div className={css.imageBox}>
+            <img src={image} />
         </div>
-        <button>
-            ADDs
-        </button>
+
+            <div className={css.desc}>
+                <span>{name}</span>
+                <span>{price}</span>
+            </div>
     </div>
-    </>
   )
 }
