@@ -1,22 +1,33 @@
 import React, { useState } from 'react'
 import css from './item.module.css'
+ 
+export default function Item(props) {
+    const {name,id, price, image,basket, ubdateBusketPlus,ubdateBusketMinus} = props
 
-export default function Item({name, image, price}) {
 
-    const [isClicked, setIsClicked] = useState(false);
-    const [cols, setCols] = useState(null)
-    const handleAddButtonClick = () => {
-        setIsClicked(true);
-    };
+    const currentItemInBasket = basket?.find(i => i.id === id);
+    const quantityInBasket = currentItemInBasket ? currentItemInBasket.quantity : 0;
 
-    const handleClick = () => {
-        setCols(prev => prev + 1 )
+
+    const handleClickPlus = () => {
+        const newItem = {name, id, price, image}
+        ubdateBusketPlus(newItem)
     }
 
+
+    const handleClickMinus = () => {
+        const newItem = {name, id, price, image}
+        ubdateBusketMinus(newItem)
+    }
+
+
+   
+
+
   return (
-    <div className={css.box}>
-    
+    <div className={css.box}>    
         <div className={css.imageBox}>
+            {quantityInBasket > 0 && <span>{quantityInBasket}</span> }
             <img src={image} />
         </div>
 
@@ -25,14 +36,16 @@ export default function Item({name, image, price}) {
                 <span>{price}</span>
             </div>
             <div className={css.btnGroup}>
-            {cols? (
+            {quantityInBasket > 0 ? (
                 <>
-                    <button className={css.animatedButtonMinus}>-</button>
-                    <button className={css.animatedButton}>+</button>
+                    <button className={css.animatedButtonMinus} onClick={handleClickMinus} >-</button>
+                    <button 
+                        className={css.animatedButton}
+                        onClick={handleClickPlus}
+                    >+</button>
                 </>
-                   
-
-            ): ( <button className={css.button} onClick={handleClick}>
+            ): 
+            ( <button className={css.button} onClick={handleClickPlus}>
                     ADD
                 </button>) } 
             </div>

@@ -4,11 +4,11 @@
     justify-content: center;
     flex-direction: column;
     width: 20vw;
+    position: relative;
   }
   
 
-
-.box .imageBox{
+ .imageBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,6 +50,21 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.imageBox span{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF8732;
+    padding: 0.4rem;
+    border-radius: 100%;
+    width: 0.8rem;
+    height: 0.8rem;
+    z-index: 1;
+    top: 10px;
+    right: 0.1rem ;
+}
 .animatedButton, .animatedButtonMinus{
     width: 49%;
     margin-top: 0.5rem;
@@ -66,7 +81,11 @@
 }
 .animatedButton{
     width: 49%;
-    animation: btnAnimation 300ms ease  1 ;
+    animation: btnAnimation 300ms ease 0ms 1 ;
+}
+.imageBox span{
+    animation: spanAnimation 300ms ease;
+    animation-iteration-count: 1;
 }
 
 @keyframes btnAnimation {   
@@ -75,5 +94,18 @@
     }
     to {
         width: 49%;
+    }
+}
+
+@keyframes spanAnimation {   
+    from {
+        opacity:0;
+        width: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        width: 0.8rem;
+        height: 0.8rem;
     }
 }
