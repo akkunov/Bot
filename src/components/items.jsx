@@ -4,6 +4,7 @@ import  pizza from '../assets/foods/pizza.jpg'
 import  cola from '../assets/foods/cola.jpg'
 import  fries from '../assets/foods/fries.jpg'
 import Item from './item'
+import css from './items.module.css'
 
 const items  = [
     {name: 'Burger',image:burger, price: '1.125$'},
@@ -18,7 +19,7 @@ export default function Items() {
 
   return (
   
-    <div className=''>
+    <div className={css.container}>
         {items.map((item,index) =>(
             <div key={index}>
                 <Item {...item} />
