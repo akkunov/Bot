@@ -3,11 +3,11 @@
     flex-direction: column;
     column-gap:20px ;
     padding: 20px;
-    width: 100px;
+    width: 30vw;
 }
 img{
-    width: 100px;
-    height: 100px;
+    width: 20vw;
+    height: 20vh;
 }
 .container div{
     font-family: "IBM Plex Mono", monospace;
