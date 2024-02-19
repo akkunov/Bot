@@ -13,7 +13,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
     height: 15vh;
 }
   .box img {
@@ -26,5 +25,55 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    row-gap: 30px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-style: normal;
   }
+
+.button{
+    width: 100%;
+    margin-top: 0.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF8732;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-style: normal;
+    padding: 8px;
+    line-height: 1rem;
+}
+.btnGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.animatedButton, .animatedButtonMinus{
+    width: 49%;
+    margin-top: 0.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF8732;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-style: normal;
+    padding: 8px;
+    line-height: 1rem;
+}
+.animatedButton{
+    width: 49%;
+    animation: btnAnimation 300ms ease  1 ;
+}
+
+@keyframes btnAnimation {   
+    from {
+        width: 100%;
+    }
+    to {
+        width: 49%;
+    }
+}
