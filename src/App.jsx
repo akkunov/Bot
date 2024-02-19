@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
+import Items from './components/items'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
     <div>
-      sdg
+      <Items />
     </div>
     </>
   )
