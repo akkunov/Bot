@@ -12,7 +12,7 @@ export default function Item({name, image, price}) {
             <span>{price}</span>
         </div>
         <button>
-            ADD
+            ADDs
         </button>
     </div>
     </>

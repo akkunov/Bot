@@ -22,7 +22,7 @@ img{
 .container button{
     outline: none;
     width: fit-content;
-    border: 0px ;
+    border: 0px;
     padding: 10px  30px;
     border-radius: 5px;
 }

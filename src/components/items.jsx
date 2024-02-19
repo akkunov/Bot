@@ -19,7 +19,7 @@ export default function Items() {
 
   return (
   
-    <div className={css.container}>
+    <div className={css.container }>
         {items.map((item,index) =>(
             <div key={index}>
                 <Item {...item} />
