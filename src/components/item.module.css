@@ -1,17 +1,33 @@
 .container{
-    width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: greenyellow;
+    justify-content: center;
+    column-gap:20px ;
+    padding: 20px;
 }
-img{
-    width: 100px;
-}
-
-.titleContainer{
-    display: flex ;
+.container div{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
     flex-direction: row;
-    width: max-content;
-    row-gap:20px ;
+    justify-content: space-between;
+}
+.container button{
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    width: fit-content;
+    border: 0px ;
+    padding: 10px  30px;
+    border-radius: 5px;
+    
+
+}
+.container button:hover{
+   background-color: coral;
+   outline: none;
+   border: 0px ;
 }

@@ -6,10 +6,10 @@ import  fries from '../assets/foods/fries.jpg'
 import Item from './item'
 
 const items  = [
-    {name: 'burger',image:burger, price: '1$'},
-    {name: 'pizza',image:pizza, price: '1$'},
-    {name: 'cola',image:cola, price: '1$'},
-    {name: 'fries',image:fries, price: '1$'},
+    {name: 'Burger',image:burger, price: '1.125$'},
+    {name: 'Pizza',image:pizza, price: '1.12$'},
+    {name: 'Cola',image:cola, price: '1.5$'},
+    {name: 'Fries',image:fries, price: '1.8$'},
 ]
 
 export default function Items() {
@@ -18,7 +18,7 @@ export default function Items() {
 
   return (
   
-    <div>
+    <div className=''>
         {items.map((item,index) =>(
             <div key={index}>
                 <Item {...item} />
