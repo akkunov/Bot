@@ -3,9 +3,7 @@ import './App.css'
 import Items from './components/items'
 
 function App() {
-  return  <div className={`container`}>
-      <Items />
-  </div>
+  return <Items />
 }
 
 export default App
