@@ -20,10 +20,6 @@ export default function Item(props) {
         updateBasketMinus(newItem)
     }
 
-
-   
-
-
   return (
     <div className={css.box}>    
         <div className={css.imageBox}>

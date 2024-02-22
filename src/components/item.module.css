@@ -37,7 +37,8 @@
     outline: none;
     border: none;
     border-radius: 5px;
-    background-color: #FF8732;
+    background-color: #ff9549;
+    color: azure;
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
     font-size: 0.8rem;
@@ -46,11 +47,13 @@
     line-height: 1rem;
 }
 .btnGroup{
+    color: azure;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .imageBox span{
+    color: azure;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -66,6 +69,7 @@
     right: 0.1rem ;
 }
 .animatedButton, .animatedButtonMinus{
+    color: azure;
     width: 49%;
     margin-top: 0.5rem;
     outline: none;

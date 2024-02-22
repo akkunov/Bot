@@ -43,17 +43,17 @@ export default function Items() {
     },[basket]) 
 
   return (
-  
-    <div className={css.container }>
-        {items.map((item,index) =>{
-           return <Item 
-                {...item}  
-                    key={index}
-                    basket={basket}
-                    updateBasketPlus={updateBasketPlus}
-                    updateBasketMinus={updateBasketMinus}
-                    />
-        } )}
-    </div>
+      <div className={css.container }>
+          {items.map((item,index) =>{
+              return <Item
+                  {...item}
+                  key={index}
+                  basket={basket}
+                  updateBasketPlus={updateBasketPlus}
+                  updateBasketMinus={updateBasketMinus}
+              />
+          } )}
+  </div>
+
   )
 }
