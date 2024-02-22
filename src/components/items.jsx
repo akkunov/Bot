@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import Item from './item'
 import css from './items.module.css'
-import { dataItems } from '../data/data';
+import {dataClothes, dataItems} from '../data/data';
 
 
 export default function Items() {
-    const  [items, setItems]= useState(dataItems || [])
+    const  [items, setItems]= useState(dataClothes || [])
     const [basket, setBasket] = useState([])
 
 
-    function ubdateBusketPlus (item) {
+    function updateBasketPlus (item) {
         const existingItemIndex = basket.findIndex((basketItem) => basketItem.id === item.id);
 
         if (existingItemIndex !== -1) {
@@ -22,7 +22,7 @@ export default function Items() {
         setBasket([...basket, { ...item, quantity: 1 }]);
     }
 
-    function ubdateBusketMinus (item) {
+    function updateBasketMinus (item) {
         const existingItemIndex = basket.findIndex((basketItem) => basketItem.id === item.id);
 
         if (existingItemIndex !== -1) {
@@ -50,8 +50,8 @@ export default function Items() {
                 {...item}  
                     key={index}
                     basket={basket}
-                    ubdateBusketPlus={ubdateBusketPlus}
-                    ubdateBusketMinus={ubdateBusketMinus}
+                    updateBasketPlus={updateBasketPlus}
+                    updateBasketMinus={updateBasketMinus}
                     />
         } )}
     </div>

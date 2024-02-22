@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import css from './item.module.css'
  
 export default function Item(props) {
-    const {name,id, price, image,basket, ubdateBusketPlus,ubdateBusketMinus} = props
+    const {name,id, price, image,basket, updateBasketPlus,updateBasketMinus} = props
 
 
     const currentItemInBasket = basket?.find(i => i.id === id);
@@ -11,13 +11,13 @@ export default function Item(props) {
 
     const handleClickPlus = () => {
         const newItem = {name, id, price, image}
-        ubdateBusketPlus(newItem)
+        updateBasketPlus(newItem)
     }
 
 
     const handleClickMinus = () => {
         const newItem = {name, id, price, image}
-        ubdateBusketMinus(newItem)
+        updateBasketMinus(newItem)
     }
 
 
