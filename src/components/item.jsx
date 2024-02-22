@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import css from './item.module.css'
+import css from '../styles/item.module.css'
  
 export default function Item(props) {
     const {name,id, price, image,basket, updateBasketPlus,updateBasketMinus} = props
@@ -13,7 +13,6 @@ export default function Item(props) {
         const newItem = {name, id, price, image}
         updateBasketPlus(newItem)
     }
-
 
     const handleClickMinus = () => {
         const newItem = {name, id, price, image}

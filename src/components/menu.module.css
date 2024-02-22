@@ -1,0 +1,162 @@
+.closedMenuButton {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    z-index: 999; /* Устанавливаем z-index, чтобы кнопка была поверх других элементов */
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #e9ebf0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-delay: 0.5s;
+    transition: background-color 0.3s ease; /* Плавная анимация при наведении */
+}
+
+.wrapper:not(.open) .closedMenuButton {
+    opacity: 1; /* Показываем кнопку только при закрытом меню */
+}
+
+
+
+.closedMenuButton:hover {
+    background-color: #f0f1f5; /* Изменение цвета при наведении */
+}
+
+
+.wrapper {
+    width: 240px; /* Изначально меню скрыто */
+    height: 100vh;
+    transform: translateX(0%);
+    background-color: #FFFFFF;
+    border-left: #E9EBF0 1px solid;
+    transition: width 0.3s ease, display 0.3s ease;
+    overflow-x: hidden;/* Плавные переходы для ширины и отображения */
+}
+.logoWrapper,
+.profile,
+.navigations,
+.logout {
+    transition: transform 0.3s ease; /* Примените плавную анимацию для смещения */
+    transform: translateX(0); /* Изначально элементы находятся в исходном положении */
+}
+
+.wrapper.open .logoWrapper,
+.wrapper.open .profile,
+.wrapper.open .navigations,
+.wrapper.open .logout {
+    transform: translateX(0); /* В открытом состоянии элементы находятся в исходном положении */
+}
+.wrapper.close .logoWrapper,
+.wrapper.close .profile,
+.wrapper.close .navigations,
+.wrapper.close .logout {
+    transform: translateX(-100%); /* В открытом состоянии элементы находятся в исходном положении */
+}
+
+
+
+.wrapper.open {
+    width: 240px; /* Открытое меню */
+    display: block;
+}
+.wrapper.close {
+    transition: transform 0.3s ease; /* Примените плавную анимацию для смещения */
+    transform: translateX(0); /* Изначально элементы находятся в исходном положении */
+    transform: translateX(-100%);
+}
+.logoWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    height: 5rem;
+    border-bottom: #E9EBF0 1px solid;
+}
+.logoContainer,
+.closeBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.logoContainer{
+    gap: 0.5rem;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+
+}
+
+
+
+.name,
+.email{
+    font-weight: bold;
+    width: 67px;
+    overflow: hidden;
+}
+
+
+.name {
+    font-size: 12px;
+    line-height: 20px;
+}
+.email{
+    font-size: 11px;
+    line-height: 16px;
+    color: #B8BFCC;
+}
+.profileBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navigations {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    list-style: none;
+}
+
+.logout{
+    bottom: 50px;
+    padding-left: 15px;
+}
+.category,
+.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 20px;
+    padding: 15px 10px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    list-style: none;
+    text-decoration: none;
+    color:#141515;
+    white-space: nowrap;
+    transition-duration: 200ms;
+}
+
+.category:hover{
+    background-color: #4F46E5;
+}
+@media (hover:none) {
+    .category.active{
+        background-color: #4F46E5;
+    }
+}
+

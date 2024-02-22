@@ -3,7 +3,6 @@
     /* align-items: center; */
     justify-content: center;
     flex-direction: column;
-    width: 20vw;
     position: relative;
   }
   
@@ -92,7 +91,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes btnAnimation {   
+@keyframes btnAnimation {
     from {
         width: 100%;
     }
@@ -101,7 +100,7 @@
     }
 }
 
-@keyframes spanAnimation {   
+@keyframes spanAnimation {
     from {
         opacity:0;
         width: 0;

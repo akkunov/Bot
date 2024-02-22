@@ -1,12 +1,14 @@
 import  { useEffect, useState } from 'react'
 import Item from './item'
-import css from './items.module.css'
-import {dataClothes, dataItems} from '../data/data';
+import css from '../styles/items.module.css'
+import {dataClothes} from '../data/data';
+import {useNavigate} from "react-router-dom";
 
 
 export default function Items() {
     const  [items, setItems]= useState(dataClothes || [])
     const [basket, setBasket] = useState([])
+    const navigate = useNavigate()
 
 
     function updateBasketPlus (item) {
@@ -38,12 +40,18 @@ export default function Items() {
         setBasket([...basket, { ...item, quantity: 1 }]);
     }
 
+    function navToAdmin (){
+        navigate('/admin')
+    }
     useEffect(() => {
         console.log(basket)
     },[basket]) 
 
   return (
       <div className={css.container }>
+          <div onClick={navToAdmin}>
+              /admin
+          </div>
           {items.map((item,index) =>{
               return <Item
                   {...item}
