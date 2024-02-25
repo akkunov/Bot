@@ -43,7 +43,7 @@ const UserSlice = createSlice({
         builder.addCase(LoginUser.rejected,(state, action) => {
             console.log(action.payload)
             state.isLoading= false
-            state.error = action.payload.data.message|| "Ошибка соеднения c сервером"
+            state.error = action.payload?.data.message|| "Ошибка соеднения c сервером"
         })
     }
 
