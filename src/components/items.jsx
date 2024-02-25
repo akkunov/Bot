@@ -58,6 +58,10 @@ export default function Items() {
                   updateBasketMinus={updateBasketMinus}
               />
           } )}
+
+          <span onClick={navToAdmin}>
+            nav to admin!
+          </span>
   </div>
 
   )

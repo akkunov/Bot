@@ -18,7 +18,7 @@ function SignIn(props) {
         dispatch(LoginUser({ email, password }))
             .then((result) => {
                 console.log(result)
-                if(result.error.message){
+                if(result?.error?.message){
                    throw Error('Ошибка при входе')
                     return
                 }
