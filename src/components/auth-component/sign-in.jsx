@@ -2,19 +2,32 @@ import React, {useState} from 'react';
 import css from './sign-in.module.css'
 import {Link, useNavigate} from "react-router-dom";
 import {LoginUser} from "../../store/userSlice.js";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 function SignIn(props) {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const navigation = useNavigate()
+    const state = useSelector(state => state.user )
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     function onSubmit(e) {
         e.preventDefault()
         console.log(email,password)
-        dispatch(LoginUser({email,password})).then(_ => navigation('/admin'))
+        dispatch(LoginUser({ email, password }))
+            .then((result) => {
+                console.log(result)
+                if(result.error.message){
+                   throw Error('Ошибка при входе')
+                    return
+                }
+                navigate('/admin')
+            })
+            .catch((error) => {
+                console.error('Ошибка входа:', error, );
+                // Ваша логика для обработки ошибки, например, показ сообщения об ошибке
+            });
     }
 
     return (
@@ -48,6 +61,7 @@ function SignIn(props) {
                         </button>
                     </div>
                 </form>
+                <div>{state.error}</div>
             </div>
 
         </div>

@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {Auth} from "../http/Auth.js";
-import {act} from "react-dom/test-utils";
 
 export  const LoginUser = createAsyncThunk(
     'user/loginUser',
@@ -8,10 +7,11 @@ export  const LoginUser = createAsyncThunk(
         try {
             const {email, password} = data
             const response = await Auth.signIn(email,password)
+            console.log(response)
 
             return response.data
         }catch (e) {
-            return  rejectWithValue(e?.response?.data)
+            return  rejectWithValue(e?.response)
         }
 
     }
@@ -41,7 +41,9 @@ const UserSlice = createSlice({
             state.isLoading= false
         })
         builder.addCase(LoginUser.rejected,(state, action) => {
-          state.error = action.payload
+            console.log(action.payload)
+            state.isLoading= false
+            state.error = action.payload.data.message|| "Ошибка соеднения c сервером"
         })
     }
 

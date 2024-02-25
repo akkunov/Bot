@@ -49,9 +49,6 @@ export default function Items() {
 
   return (
       <div className={css.container }>
-          <div onClick={navToAdmin}>
-              /admin
-          </div>
           {items.map((item,index) =>{
               return <Item
                   {...item}
